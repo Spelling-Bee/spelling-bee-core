@@ -1,0 +1,26 @@
+{
+  "name": "spelling-bee-core",
+  "version": "0.0.1",
+  "main": "lib/SpellingBee.js",
+  "scripts": {
+    "test": "jest",
+    "compile": "babel src --out-dir lib --extensions .ts,.tsx",
+    "play": "node ./scripts/play.js",
+    "words": "node ./scripts/words.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/compat-data": "^7.13.12",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/jest": "^25.1.4",
+    "fs": "^0.0.1-security",
+    "yargs": "^15.3.1"
+  }
+}
