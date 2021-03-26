@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../types";
+import { SpellingBeeSetting } from "../..";
 function hasValidSize(word: string, min: number): boolean;
 function hasValidSize(word: string, setting: SpellingBeeSetting): boolean;
 

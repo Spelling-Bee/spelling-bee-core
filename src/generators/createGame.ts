@@ -1,4 +1,4 @@
-import { SpellingBeeSetting, SpellingBeeGame } from "../types";
+import { SpellingBeeSetting, SpellingBeeGame } from "../..";
 import generateWords from "./generateWords";
 import createId from "./createId";
 
@@ -27,13 +27,13 @@ function createGame(
   }
 
   return {
-    id: createId(letters),
+    id: createId(letters, pivotLetter),
     dictionary,
     letters,
     pivotLetter,
     min,
     guessedWords: [],
-    words: generateWords(dictionary, letters, pivotLetter, min)
+    words: generateWords(dictionary, letters, pivotLetter, min),
   };
 }
 

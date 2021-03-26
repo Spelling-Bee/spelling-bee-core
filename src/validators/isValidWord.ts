@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../types";
+import { SpellingBeeSetting } from "../..";
 function isValidWord(word: string, letters: Array<string>): boolean;
 function isValidWord(word: string, setting: SpellingBeeSetting): boolean;
 
@@ -14,7 +14,7 @@ function isValidWord(
     letters = dynamicArgument;
   }
 
-  letters = letters.map(letter => letter.toUpperCase());
+  letters = letters.map((letter) => letter.toUpperCase());
   for (let i = 0; i < word.length; i++) {
     if (letters.indexOf(word.charAt(i).toUpperCase()) === -1) {
       return false;

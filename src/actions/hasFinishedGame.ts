@@ -1,4 +1,4 @@
-import { SpellingBeeGame } from "../types";
+import { SpellingBeeGame } from "../../";
 import wasGuessed from "./wasGuessed";
 
 function hasFinishedGame(
@@ -20,7 +20,7 @@ function hasFinishedGame(
     words = dynamicArgument;
   }
 
-  guessedWords = guessedWords.map(guessedWord => guessedWord.toUpperCase());
+  guessedWords = guessedWords.map((guessedWord) => guessedWord.toUpperCase());
   if (guessedWords.length === words.length) {
     for (let word of words) {
       if (!wasGuessed(word, guessedWords)) {

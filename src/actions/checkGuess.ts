@@ -1,4 +1,4 @@
-import { SpellingBeeGame } from "../types";
+import { SpellingBeeGame } from "../../";
 import { isValidGuess } from "../validators";
 import hasWord from "./hasWord";
 import wasGuessed from "./wasGuessed";

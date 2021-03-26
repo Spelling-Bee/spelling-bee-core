@@ -1,4 +1,4 @@
-import { SpellingBeeGame } from "../types";
+import { SpellingBeeGame } from "../..";
 import { containsWord } from "../helpers";
 
 function hasWord(word: string, words: Array<string>): boolean;

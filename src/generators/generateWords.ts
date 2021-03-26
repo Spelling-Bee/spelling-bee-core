@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../types";
+import { SpellingBeeSetting } from "../..";
 import { hasValidSize, isValidWord, hasPivotLetter } from "../validators";
 
 function generateWords(
@@ -25,9 +25,9 @@ function generateWords(
     dictionary = dynamicArgument;
   }
   return dictionary
-    .filter(word => hasValidSize(word, min))
-    .filter(word => hasPivotLetter(word, pivotLetter))
-    .filter(word => isValidWord(word, letters));
+    .filter((word) => hasValidSize(word, min))
+    .filter((word) => hasPivotLetter(word, pivotLetter))
+    .filter((word) => isValidWord(word, letters));
 }
 
 export default generateWords;

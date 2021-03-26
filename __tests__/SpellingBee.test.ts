@@ -5,13 +5,13 @@ describe("Spelling Bee", () => {
     dictionary: ["a", "b", "aa", "ab", "bb", "aaa", "aba", "bbb", "ac"],
     letters: ["a", "b"],
     pivotLetter: "a",
-    min: 2
+    min: 2,
   };
   const sb = {
     ...setting,
-    id: "ab",
+    id: "a-ab",
     guessedWords: [],
-    words: ["aa", "ab", "aaa", "aba"]
+    words: ["aa", "ab", "aaa", "aba"],
   };
 
   beforeEach(() => {
@@ -130,13 +130,17 @@ describe("Spelling Bee", () => {
 
   describe("generators", () => {
     test("createId", () => {
-      expect(SpellingBee.createId(["a", "b"])).toEqual("ab");
-      expect(SpellingBee.createId(["b", "a"])).toEqual("ab");
-      expect(SpellingBee.createId(["b", "c", "a"])).toEqual("abc");
-      expect(SpellingBee.createId(["a", "c", "a"])).toEqual("aac");
-      expect(SpellingBee.createId(["a", "a", "a"])).toEqual("aaa");
+      expect(SpellingBee.createId(["a", "b"], "a")).toEqual("a-ab");
+      expect(SpellingBee.createId(["a", "b"], "b")).toEqual("b-ab");
 
-      expect(SpellingBee.createId(setting)).toEqual("ab");
+      expect(SpellingBee.createId(["b", "a"], "a")).toEqual("a-ab");
+      expect(SpellingBee.createId(["b", "a"], "b")).toEqual("b-ab");
+
+      expect(SpellingBee.createId(["b", "c", "a"], "b")).toEqual("b-abc");
+      expect(SpellingBee.createId(["a", "c", "a"], "c")).toEqual("c-aac");
+      expect(SpellingBee.createId(["a", "a", "a"], "a")).toEqual("a-aaa");
+
+      expect(SpellingBee.createId(setting)).toEqual("a-ab");
     });
 
     test("generateWords", () => {
@@ -153,7 +157,7 @@ describe("Spelling Bee", () => {
         "aa",
         "ab",
         "aaa",
-        "aba"
+        "aba",
       ]);
     });
 
@@ -166,13 +170,13 @@ describe("Spelling Bee", () => {
           1
         )
       ).toEqual({
-        id: "ab",
+        id: "a-ab",
         dictionary: ["a", "b", "aa", "bb", "ab", "cc"],
         letters: ["a", "b"],
         pivotLetter: "a",
         min: 1,
         guessedWords: [],
-        words: ["a", "aa", "ab"]
+        words: ["a", "aa", "ab"],
       });
 
       expect(SpellingBee.createGame(setting)).toEqual(sb);

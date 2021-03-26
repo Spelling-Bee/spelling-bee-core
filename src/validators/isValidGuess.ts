@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../types";
+import { SpellingBeeSetting } from "../..";
 import hasPivotLetter from "./hasPivotLetter";
 import hasValidSize from "./hasValidSize";
 import isValidWord from "./isValidWord";

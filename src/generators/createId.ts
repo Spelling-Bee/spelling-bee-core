@@ -1,26 +1,21 @@
-import { SpellingBeeSetting } from "../types";
-function createId(letters: Array<string>);
+import { SpellingBeeSetting } from "../..";
+function createId(letters: Array<string>, pivotLetter: string);
 function createId(setting: SpellingBeeSetting);
 
-function createId(dynamicArgument: Array<string> | SpellingBeeSetting) {
+function createId(
+  dynamicArgument: Array<string> | SpellingBeeSetting,
+  pivotLetter?: string
+) {
   let letters = new Array<string>();
   if ("letters" in dynamicArgument) {
     letters = dynamicArgument.letters;
+    pivotLetter = dynamicArgument.pivotLetter;
   } else {
     letters = dynamicArgument;
+    pivotLetter = pivotLetter;
   }
 
-  return [...letters]
-    .sort((a, b) => {
-      if (a > b) {
-        return 1;
-      }
-      if (b < a) {
-        return -1;
-      }
-      return 0;
-    })
-    .join("");
+  return pivotLetter + "-" + [...letters].sort().join("");
 }
 
 export default createId;

@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../types";
+import { SpellingBeeSetting } from "../..";
 function hasPivotLetter(word: string, pivotLetter: string);
 function hasPivotLetter(word: string, setting: SpellingBeeSetting);
 function hasPivotLetter(
