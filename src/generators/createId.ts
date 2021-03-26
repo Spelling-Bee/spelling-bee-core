@@ -1,12 +1,16 @@
 import { SpellingBeeSetting } from "../types";
-function createId(letters: Array<string>, pivotLetter: string, min: number);
-function createId(setting: SpellingBeeSetting);
+function createId(
+  letters: Array<string>,
+  pivotLetter: string,
+  min: number
+): string;
+function createId(setting: SpellingBeeSetting): string;
 
 function createId(
   dynamicArgument: Array<string> | SpellingBeeSetting,
   pivotLetter?: string,
   min?: number
-) {
+): string {
   let letters = new Array<string>();
   if ("letters" in dynamicArgument) {
     letters = dynamicArgument.letters;
