@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../..";
+import { SpellingBeeSetting } from "../types";
 import { hasValidSize, isValidWord, hasPivotLetter } from "../validators";
 
 function generateWords(

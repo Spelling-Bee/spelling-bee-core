@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../..";
+import { SpellingBeeSetting } from "../types";
 function createId(letters: Array<string>, pivotLetter: string);
 function createId(setting: SpellingBeeSetting);
 

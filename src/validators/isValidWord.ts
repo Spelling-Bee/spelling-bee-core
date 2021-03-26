@@ -1,4 +1,4 @@
-import { SpellingBeeSetting } from "../..";
+import { SpellingBeeSetting } from "../types";
 function isValidWord(word: string, letters: Array<string>): boolean;
 function isValidWord(word: string, setting: SpellingBeeSetting): boolean;
 

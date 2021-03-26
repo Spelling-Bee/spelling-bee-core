@@ -1,4 +1,4 @@
-import { SpellingBeeGame } from "../..";
+import { SpellingBeeGame } from "../types";
 import checkGuess from "./checkGuess";
 
 function makeGuess(

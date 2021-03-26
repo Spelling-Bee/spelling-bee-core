@@ -1,4 +1,4 @@
-import { SpellingBeeSetting, SpellingBeeGame } from "../..";
+import { SpellingBeeSetting, SpellingBeeGame } from "../types";
 import generateWords from "./generateWords";
 import createId from "./createId";
 
