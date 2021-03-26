@@ -1,5 +1,3 @@
-export type SpellingBeeSetting = {};
-
 export interface SpellingBeeSetting {
   dictionary: Array<string>;
   letters: Array<string>;

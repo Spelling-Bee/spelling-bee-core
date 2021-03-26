@@ -1,7 +1,7 @@
 {
   "name": "spelling-bee-core",
-  "version": "0.0.2",
-  "main": "lib/SpellingBee.js",
+  "version": "0.0.3",
+  "main": "src/SpellingBee.ts",
   "scripts": {
     "test": "jest",
     "compile": "babel src --out-dir lib --extensions .ts,.tsx",

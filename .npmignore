@@ -2,7 +2,6 @@ node_modules
 .DS_STORE
 __tests__
 scripts
-src
 babel.config.js
 jest.config.js
 yarn.lock
