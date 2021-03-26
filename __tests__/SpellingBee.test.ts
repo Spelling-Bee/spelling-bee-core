@@ -9,7 +9,7 @@ describe("Spelling Bee", () => {
   };
   const sb = {
     ...setting,
-    id: "a-ab",
+    id: "2-a-ab",
     guessedWords: [],
     words: ["aa", "ab", "aaa", "aba"],
   };
@@ -130,17 +130,17 @@ describe("Spelling Bee", () => {
 
   describe("generators", () => {
     test("createId", () => {
-      expect(SpellingBee.createId(["a", "b"], "a")).toEqual("a-ab");
-      expect(SpellingBee.createId(["a", "b"], "b")).toEqual("b-ab");
+      expect(SpellingBee.createId(["a", "b"], "a", 2)).toEqual("2-a-ab");
+      expect(SpellingBee.createId(["a", "b"], "b", 2)).toEqual("2-b-ab");
 
-      expect(SpellingBee.createId(["b", "a"], "a")).toEqual("a-ab");
-      expect(SpellingBee.createId(["b", "a"], "b")).toEqual("b-ab");
+      expect(SpellingBee.createId(["b", "a"], "a", 2)).toEqual("2-a-ab");
+      expect(SpellingBee.createId(["b", "a"], "b", 2)).toEqual("2-b-ab");
 
-      expect(SpellingBee.createId(["b", "c", "a"], "b")).toEqual("b-abc");
-      expect(SpellingBee.createId(["a", "c", "a"], "c")).toEqual("c-aac");
-      expect(SpellingBee.createId(["a", "a", "a"], "a")).toEqual("a-aaa");
+      expect(SpellingBee.createId(["b", "c", "a"], "b", 2)).toEqual("2-b-abc");
+      expect(SpellingBee.createId(["a", "c", "a"], "c", 2)).toEqual("2-c-aac");
+      expect(SpellingBee.createId(["a", "a", "a"], "a", 2)).toEqual("2-a-aaa");
 
-      expect(SpellingBee.createId(setting)).toEqual("a-ab");
+      expect(SpellingBee.createId(setting)).toEqual("2-a-ab");
     });
 
     test("generateWords", () => {
@@ -170,7 +170,7 @@ describe("Spelling Bee", () => {
           1
         )
       ).toEqual({
-        id: "a-ab",
+        id: "1-a-ab",
         dictionary: ["a", "b", "aa", "bb", "ab", "cc"],
         letters: ["a", "b"],
         pivotLetter: "a",

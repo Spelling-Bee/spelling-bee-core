@@ -27,7 +27,7 @@ function createGame(
   }
 
   return {
-    id: createId(letters, pivotLetter),
+    id: createId(letters, pivotLetter, min),
     dictionary,
     letters,
     pivotLetter,
